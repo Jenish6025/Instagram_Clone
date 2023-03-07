@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/boxername"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="Please Enter the name of the Kickboxer"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/punchspeed"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="Please Enter the punch speed"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <EditText
+        android:id="@+id/punchpower"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="Please Enter the punch power"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <EditText
+        android:id="@+id/kickspeed"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="Please Enter the kick speed"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteY="198dp" />
+
+    <EditText
+        android:id="@+id/kickpower"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="Please Enter the kick power"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <Button
+        android:id="@+id/btnserver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="helloWorldTapped"
+        android:layout_marginLeft="90dp"
+        android:text="Save Kick Boxer to Server"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="332dp" />
+
+
+</LinearLayout>
