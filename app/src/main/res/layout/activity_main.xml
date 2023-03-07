@@ -62,5 +62,31 @@
         tools:layout_editor_absoluteX="78dp"
         tools:layout_editor_absoluteY="332dp" />
 
+    <TextView
+        android:id="@+id/getdata"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="150dp"
+        android:text="Get data from Server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/getalldata"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/clearalldata"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:text="Clear Data"
+        android:layout_marginLeft="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

@@ -6,20 +6,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 import com.shashank.sony.fancytoastlib.FancyToast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btnserver;
     EditText boxername,pspeed,ppower,kspeed,kpower;
+    TextView getdata;
+    TextView getalldata,cleardata;
+    String alldata;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -33,6 +42,46 @@ public class MainActivity extends AppCompatActivity {
         ppower=findViewById(R.id.punchpower);
         kpower=findViewById(R.id.kickpower);
         kspeed=findViewById(R.id.kickspeed);
+        getdata=findViewById(R.id.getdata);
+        getalldata=findViewById(R.id.getalldata);
+        cleardata=findViewById(R.id.clearalldata);
+
+        cleardata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getalldata.setText("");
+            }
+        });
+
+        getdata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                alldata="";
+                ParseQuery<ParseObject> queryAll=ParseQuery.getQuery("KickBoxer");
+                queryAll.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+
+                        if (e==null){
+
+                            if (objects.size()>0){
+                                for(ParseObject kickBoxer: objects){
+                                     alldata+=alldata+kickBoxer+"\n";
+                                    Log.i("alldata------>",""+alldata);
+                                }
+                                Log.i("finalalldata------>",""+alldata);
+                                getalldata.setText(alldata);
+
+                            }
+
+                        }
+
+                    }
+                });
+
+            }
+        });
 
         btnserver.setOnClickListener(new View.OnClickListener() {
             @Override
